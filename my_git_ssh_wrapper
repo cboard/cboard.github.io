@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -i /home/install/.ssh/id_rsa_mchalkboard $1 $2
