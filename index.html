@@ -139,7 +139,7 @@
               <input type="text" name="entry.1360748745" placeholder="Электронная почта"/>
             </div>
             <div class="control">
-              <input type="submit" value="Оформить заказ"/>
+              <input type="submit" value="Оформить заказ" onclick="create_order(200); return true"/>
             </div>
           </form>
         </div>
@@ -296,7 +296,7 @@
               <input type="text" name="entry.1360748745" placeholder="Количество упаковок"/>
             </div>
             <div class="control">
-              <input type="submit" value="Оформить заказ"/>
+              <input type="submit" value="Оформить заказ" onclick="create_order(200); return true"/>
             </div>
           </form>
         </div>
@@ -316,5 +316,55 @@
     </div>
 
   </div>
+  <!-- Oh My Stats tracker -->
+  <script type="text/javascript">
+  //<![CDATA[
+    var _oms = window._oms || [];
+
+    _oms.push(["set_project_id", "gsuduwiufnmkwnlnollnflkddpmcueilescusvra"]);
+    _oms.push(["set_domain", ".melovaya-doska.ru"]);
+    (function() {
+     var oms = document.createElement("script");
+     oms.type = "text/javascript";
+     oms.async = true;
+     oms.src = "//ohmystats.com/oms.js";
+     var s = document.getElementsByTagName("script")[0];
+     s.parentNode.insertBefore(oms, s);
+    })();
+
+    var create_order = function(sum){
+      var _oms = window._oms || [];
+      var order_id = getDateTime();
+      _oms.push(["create_order",{order_id:order_id, sum:sum}]);
+    };
+  //]]>
+
+  function getDateTime() {
+    var now     = new Date();
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1;
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds();
+    if(month.toString().length == 1) {
+      var month = '0'+month;
+    }
+    if(day.toString().length == 1) {
+      var day = '0'+day;
+    }
+    if(hour.toString().length == 1) {
+      var hour = '0'+hour;
+    }
+    if(minute.toString().length == 1) {
+      var minute = '0'+minute;
+    }
+    if(second.toString().length == 1) {
+      var second = '0'+second;
+    }
+    var dateTime = year+month+day+hour+minute+second;
+    return dateTime;
+  }
+  </script>
 </body>
 </html>
