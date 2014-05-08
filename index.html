@@ -105,7 +105,13 @@
       -webkit-box-shadow: 1px 1px 3px 0px rgba(1, 1, 1, 0.5);
       -moz-box-shadow:    1px 1px 3px 0px rgba(1, 1, 1, 0.5);
     }
+
+    .control input[disabled=disabled], .control input:disabled {
+      background-color: #e0e0e0;
+      background-image: none;
+    }
   </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
   <div class="header blue_bg">
@@ -128,6 +134,7 @@
       </div>
       <div class="block width-4-no-right-margin">
         <h5 class="center">Заказать меловую плёнку 200×45&nbsp;см за&nbsp;1&nbsp;350&nbsp;руб.</h5>
+        <p class="small center">Подробную информацию см. <a href="#legal">внизу</a></p>
         <div class="form">
           <form action="https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse" method="post">
             <input type="hidden" name="entry.1179487391" value="Верх"/>
@@ -141,7 +148,7 @@
               <input type="text" name="entry.1360748745" placeholder="Электронная почта"/>
             </div>
             <div class="control">
-              <input type="submit" value="Оформить заказ" onclick="create_order(200); return true"/>
+              <input type="submit" value="Оформить заказ"/>
             </div>
           </form>
         </div>
@@ -284,7 +291,7 @@
         <h1 class="center">Оформить заказ</h1>
         <div class="form">
           <form action="https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse" method="post">
-            <input type="hidden" name="entry.1179487391" value="Верх"/>
+            <input type="hidden" name="entry.1179487391" value="Низ"/>
             <div class="field">
               <input type="text" name="entry.1629810863" placeholder="Имя"/>
             </div>
@@ -295,10 +302,10 @@
               <input type="text" name="entry.1360748745" placeholder="Электронная почта"/>
             </div>
             <div class="field">
-              <input type="text" name="entry.1360748745" placeholder="Количество упаковок"/>
+              <input type="text" name="entry.1317572544" placeholder="Количество упаковок"/>
             </div>
             <div class="control">
-              <input type="submit" value="Оформить заказ" onclick="create_order(200); return true"/>
+              <input type="submit" value="Оформить заказ"/>
             </div>
           </form>
         </div>
@@ -316,6 +323,7 @@
         <p>Если Вам не понравился товар, мы вернём Вам деньги без лишних вопросов в течение 30&nbsp;дней после получения</p>
       </div>
       <div class="block width-5 small">
+        <a name="legal"/>
         <p>ИП Золотарев Евгений Валерьвич</p>
         <p>ОГРНИП: 310504734000091</p>
         <p>Доставка осуществляется бандеролью первого класса и только по России</p>
@@ -343,7 +351,7 @@
      s.parentNode.insertBefore(oms, s);
     })();
 
-    var create_order = function(sum){
+    var createOrder = function(sum){
       var _oms = window._oms || [];
       var order_id = getDateTime();
       _oms.push(["create_order",{order_id:order_id, sum:sum}]);
@@ -385,6 +393,27 @@
     }
 
     (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=U/dtK8ymrwPYmezzt8UolQMQCdYzHeZKxCtVNdRUGEKVosQd6J4SM6p/HAaqkT8pXODUBFMXbCm/t2QtiT266IB0srAReCqrLsFO2brY3UQSYbdvOmNhWcGaAsMffzgcjauVnJnfuYyr/w5giiphTGwIvXHAwY7l63Ims3q2Dt0-';
+
+    sendOrderForm = function(_form){
+      $.ajax({
+        type: 'POST',
+        url: "https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse",
+        data: _form.serialize(),
+        success: function() {
+          alert("Success!");
+        },
+      });
+    };
+
+    $(document).ready(function(){
+      $('.control input').click(function(){
+        $(this).attr('disabled','disabled');
+        sendOrderForm($(this).closest('form'));
+        createOrder(200);
+        window.location.href = "order.html";
+        return false;
+      });
+    });
   //]]>
   </script>
 </body>
