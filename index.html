@@ -345,33 +345,6 @@
     ga('create', 'UA-50762701-1', 'melovaya-doska.ru');
     ga('send', 'pageview');
 
-    function getDateTime() {
-      var now     = new Date();
-      var year    = now.getFullYear();
-      var month   = now.getMonth()+1;
-      var day     = now.getDate();
-      var hour    = now.getHours();
-      var minute  = now.getMinutes();
-      var second  = now.getSeconds();
-      if(month.toString().length == 1) {
-        var month = '0'+month;
-      }
-      if(day.toString().length == 1) {
-        var day = '0'+day;
-      }
-      if(hour.toString().length == 1) {
-        var hour = '0'+hour;
-      }
-      if(minute.toString().length == 1) {
-        var minute = '0'+minute;
-      }
-      if(second.toString().length == 1) {
-        var second = '0'+second;
-      }
-      var dateTime = year+month+day+hour+minute+second;
-      return dateTime;
-    }
-
     (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=U/dtK8ymrwPYmezzt8UolQMQCdYzHeZKxCtVNdRUGEKVosQd6J4SM6p/HAaqkT8pXODUBFMXbCm/t2QtiT266IB0srAReCqrLsFO2brY3UQSYbdvOmNhWcGaAsMffzgcjauVnJnfuYyr/w5giiphTGwIvXHAwY7l63Ims3q2Dt0-';
 
     sendOrderForm = function(_form){
