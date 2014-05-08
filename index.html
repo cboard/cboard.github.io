@@ -399,8 +399,9 @@
         type: 'POST',
         url: "https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse",
         data: _form.serialize(),
-        success: function() {
-          alert("Success!");
+        complete: function() {
+          createOrder(200);
+          window.location.href = "order.html";
         },
       });
     };
@@ -409,8 +410,6 @@
       $('.control input').click(function(){
         $(this).attr('disabled','disabled');
         sendOrderForm($(this).closest('form'));
-        createOrder(200);
-        window.location.href = "order.html";
         return false;
       });
     });
