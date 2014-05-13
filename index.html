@@ -4,6 +4,30 @@
 	<meta charset="UTF-8">
 	<title> Меловая самоклеющаяся плёнка</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="counters.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+    sendOrderForm = function(_form){
+      $.ajax({
+        type: 'POST',
+        url: "https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse",
+        data: _form.serialize(),
+        complete: function() {
+          window.location.href = "order.html";
+        },
+      });
+    };
+
+    $(document).ready(function(){
+      $('.control input').click(function(){
+        $(this).attr('disabled','disabled');
+        sendOrderForm($(this).closest('form'));
+        return false;
+      });
+    });
+  //]]>
+  </script>
   <style type="text/css">
     /* [Reset Style Sheet] */
 
@@ -111,7 +135,6 @@
       background-image: none;
     }
   </style>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
   <div class="header blue_bg">
@@ -335,37 +358,5 @@
     </div>
 
   </div>
-  <script type="text/javascript">
-  //<![CDATA[
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-50762701-1', 'melovaya-doska.ru');
-    ga('send', 'pageview');
-
-    (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=U/dtK8ymrwPYmezzt8UolQMQCdYzHeZKxCtVNdRUGEKVosQd6J4SM6p/HAaqkT8pXODUBFMXbCm/t2QtiT266IB0srAReCqrLsFO2brY3UQSYbdvOmNhWcGaAsMffzgcjauVnJnfuYyr/w5giiphTGwIvXHAwY7l63Ims3q2Dt0-';
-
-    sendOrderForm = function(_form){
-      $.ajax({
-        type: 'POST',
-        url: "https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse",
-        data: _form.serialize(),
-        complete: function() {
-          window.location.href = "order.html";
-        },
-      });
-    };
-
-    $(document).ready(function(){
-      $('.control input').click(function(){
-        $(this).attr('disabled','disabled');
-        sendOrderForm($(this).closest('form'));
-        return false;
-      });
-    });
-  //]]>
-  </script>
 </body>
 </html>

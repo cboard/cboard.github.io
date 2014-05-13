@@ -4,6 +4,41 @@
 	<meta charset="UTF-8">
 	<title> Меловая самоклеющаяся плёнка</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="counters.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+    function getDateTime() {
+      var now     = new Date();
+      var year    = now.getFullYear();
+      var month   = now.getMonth()+1;
+      var day     = now.getDate();
+      var hour    = now.getHours();
+      var minute  = now.getMinutes();
+      var second  = now.getSeconds();
+      if(month.toString().length == 1) {
+        var month = '0'+month;
+      }
+      if(day.toString().length == 1) {
+        var day = '0'+day;
+      }
+      if(hour.toString().length == 1) {
+        var hour = '0'+hour;
+      }
+      if(minute.toString().length == 1) {
+        var minute = '0'+minute;
+      }
+      if(second.toString().length == 1) {
+        var second = '0'+second;
+      }
+      var dateTime = year+month+day+hour+minute+second;
+      return dateTime;
+    }
+
+    var _oms = window._oms || [];
+    var order_id = getDateTime();
+    _oms.push(["create_order",{order_id:order_id, sum:200}]);
+  //]]>
+  </script>
   <style type="text/css">
     /* [Reset Style Sheet] */
 
@@ -132,61 +167,5 @@
       <p><a href="index.html">Вернуться</a></p>
     </div>
   </div>
-  <script type="text/javascript">
-  //<![CDATA[
-    function getDateTime() {
-      var now     = new Date();
-      var year    = now.getFullYear();
-      var month   = now.getMonth()+1;
-      var day     = now.getDate();
-      var hour    = now.getHours();
-      var minute  = now.getMinutes();
-      var second  = now.getSeconds();
-      if(month.toString().length == 1) {
-        var month = '0'+month;
-      }
-      if(day.toString().length == 1) {
-        var day = '0'+day;
-      }
-      if(hour.toString().length == 1) {
-        var hour = '0'+hour;
-      }
-      if(minute.toString().length == 1) {
-        var minute = '0'+minute;
-      }
-      if(second.toString().length == 1) {
-        var second = '0'+second;
-      }
-      var dateTime = year+month+day+hour+minute+second;
-      return dateTime;
-    }
-
-    var _oms = window._oms || [];
-
-    _oms.push(["set_project_id", "gsuduwiufnmkwnlnollnflkddpmcueilescusvra"]);
-    _oms.push(["set_domain", ".melovaya-doska.ru"]);
-    (function() {
-     var oms = document.createElement("script");
-     oms.type = "text/javascript";
-     oms.async = true;
-     oms.src = "//ohmystats.com/oms.js";
-     var s = document.getElementsByTagName("script")[0];
-     s.parentNode.insertBefore(oms, s);
-    })();
-
-    var order_id = getDateTime();
-    _oms.push(["create_order",{order_id:order_id, sum:200}]);
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-50762701-1', 'melovaya-doska.ru');
-    ga('send', 'pageview');
-
-    (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=U/dtK8ymrwPYmezzt8UolQMQCdYzHeZKxCtVNdRUGEKVosQd6J4SM6p/HAaqkT8pXODUBFMXbCm/t2QtiT266IB0srAReCqrLsFO2brY3UQSYbdvOmNhWcGaAsMffzgcjauVnJnfuYyr/w5giiphTGwIvXHAwY7l63Ims3q2Dt0-';
-  //]]>
-  </script>
 </body>
 </html>
