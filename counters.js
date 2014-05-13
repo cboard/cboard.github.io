@@ -3,9 +3,10 @@
     try {
       w.yaCounter24950972 = new Ya.Metrika({id:24950972,
         webvisor:true,
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true});
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      });
     } catch(e) { }
   });
 
