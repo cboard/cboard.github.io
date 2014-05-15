@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title> Меловая самоклеющаяся плёнка</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="javascripts/jquery.ba-hashchange.min.js" type="text/javascript"></script>
+  <script src="javascripts/jquery.easytabs.min.js" type="text/javascript"></script>
+  <script src="counters.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+    sendOrderForm = function(_form){
+      $.ajax({
+        type: 'POST',
+        url: "https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse",
+        data: _form.serialize(),
+        complete: function() {
+          window.location.href = "order.html";
+        },
+      });
+    };
+
+    $(document).ready(function(){
+      $('#tab-container').easytabs();
+      $('.control input').click(function(){
+        $(this).attr('disabled','disabled');
+        sendOrderForm($(this).closest('form'));
+        return false;
+      });
+    });
+  //]]>
+  </script>
+  <style type="text/css">
+    /* [Reset Style Sheet] */
+
+    html, body, h1, h2, h3, h4, h5, h6, p, div, img, li, ul, a, select, input, option, textarea, table, tr, td, th, form, label, span
+    { padding: 0; margin: 0; font-size: 100%; }
+    li { list-style: none }
+    em { font-style: normal }
+    table { border-collapse: collapse; }
+    img { border-width: 0px; }
+
+    /* [STYLES] */
+    body, html {margin:0; padding:0; height:100%}
+    body {
+      font-family: 'Trebuchet MS', Helvetica, sans-serif;
+      color:white;
+      font-size:18px;
+    }
+
+    .wrapper, .header, .footer {min-width:960px; padding:0 5%}
+
+    .tab-container {padding-top:2em}
+    .etabs {margin:1.2em 0; font-size:20px}
+    .tab {margin-bottom:.8em}
+
+    .block {padding:1.2em 0}
+    .center {text-align:center}
+    .divider {clear:both; border-top:1px solid #ccc}
+    .space {clear:both; padding:0.6em 0}
+
+    .list {font-size:20px; line-height:1.5em}
+    .list ul li {list-style:disc; margin-left:20px; padding-left:5px}
+    .list ul h4 {margin-bottom:.3em; padding-bottom:0}
+    .form {padding-bottom:.5em}
+    .small {font-size:75%; color:#eee}
+    .image img {width:100%; margin:0 auto; display:block}
+
+    .width-1 {width: 7%; margin-right:3%; float:left}
+    .width-2 {width:17%; margin-right:3%; float:left}
+    .width-25 {width:22%; margin-right:3%; float:left}
+    .width-3 {width:27%; margin-right:3%; float:left}
+    .width-4 {width:37%; margin-right:3%; float:left}
+    .width-5 {width:47%; margin-right:3%; float:left}
+    .width-6 {width:57%; margin-right:3%; float:left}
+    .width-7 {width:67%; margin-right:3%; float:left}
+    .width-8 {width:87%; margin-right:3%; float:left}
+    .width-9 {width:87%; margin-right:3%; float:left}
+
+    .width-1-no-right-margin {width:10%; margin-right:0; float:left}
+    .width-2-no-right-margin {width:20%; margin-right:0; float:left}
+    .width-3-no-right-margin {width:30%; margin-right:0; float:left}
+    .width-4-no-right-margin {width:40%; margin-right:0; float:left}
+    .width-5-no-right-margin {width:50%; margin-right:0; float:left}
+    .width-6-no-right-margin {width:60%; margin-right:0; float:left}
+    .width-7-no-right-margin {width:70%; margin-right:0; float:left}
+    .width-75-no-right-margin {width:75%; margin-right:0; float:left}
+    .width-8-no-right-margin {width:80%; margin-right:0; float:left}
+    .width-9-no-right-margin {width:90%; margin-right:0; float:left}
+
+    h1 {font-size: 36px; font-weight:normal; padding-bottom:0.3em}
+    h2 {font-size: 18px; font-weight:normal; padding-bottom:0.5em}
+    h3 {font-size: 42px; font-weight:bold; padding-bottom:0.3em;}
+    h4 {font-size: 28px; font-weight:bold; padding-bottom:0.3em}
+    h5 {font-size: 20px; font-weight:normal; padding-bottom:0.3em; line-height:1.5em}
+
+    h3, h4, h5 {color:#ffccaa}
+    a {color:#ffccaa}
+
+    .block h4 {margin-bottom:.8em}
+    .block p {line-height:1.3em; padding-bottom:.3em}
+
+    .blue {color:#003366}
+    .blue_bg {
+      background:#006070;
+      color:#ffffff;
+    }
+    .blue_bg h2 {color:#c0c0c0}
+    .visual_bg {
+      background-image:url('images/bg.jpg');
+      background-repeat:no-repeat;
+      background-attachment: fixed;
+      background-position:center;
+      background-size:auto 100%;
+    }
+
+    .field input {
+      font-size: 18px;
+      width: 100%; margin: .55em -1px; padding: 10px 0;
+      background: #FFFFFF; border: 1px inset #555555; color: #555555;
+      border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px;
+      text-indent: .5em;
+    }
+
+    .control input {
+      width:100%; height:65px; margin-top:.35em;
+      display: block; text-align: center;
+      color: #FFFFFF;
+      background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, #278DA1),
+      color-stop(1, #01596B)
+      );
+      background-color: #007790;
+      background-image: -o-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
+      background-image: -moz-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
+      background-image: -webkit-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
+      background-image: -ms-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
+      background-image: linear-gradient(to bottom, #278DA1 0%, #01596B 100%);
+      font-size: 22px; font-weight:bold;
+      cursor: pointer; border: 0;
+      border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;
+      box-shadow:         1px 1px 3px 0px rgba(1, 1, 1, 0.5);
+      -webkit-box-shadow: 1px 1px 3px 0px rgba(1, 1, 1, 0.5);
+      -moz-box-shadow:    1px 1px 3px 0px rgba(1, 1, 1, 0.5);
+    }
+
+    .control input[disabled=disabled], .control input:disabled {
+      background-color: #e0e0e0;
+      background-image: none;
+    }
+
+    /* Sticky Footer Solution */
+
+    .wrapper {height:100%; min-height: 100%;}
+
+    .main {overflow:auto;
+      padding-bottom: 5em}  /* must be same height as the footer */
+
+    .footer {position: relative;
+      margin-top: -5em; /* negative value of footer height */
+      height: 5em;
+      clear:both;}
+
+    /*Opera Fix*/
+    body:before {/* thanks to Maleika (Kohoutec)*/
+      content:"";
+      height:100%;
+      float:left;
+      width:0;
+      margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+    }
+  </style>
+</head>
+<body class="visual_bg">
+  <div class="wrapper">
+
+    <div id="tab-container" class="main tab-container">
+
+      <ul class="etabs width-25">
+        <li class="tab">
+          <a href="#01"><img src="images/icons/05.png" alt="chair"/></a>
+          <a href="#01">Подарок детям</a>
+        </li>
+        <li class="tab">
+          <a href="#02"><img src="images/icons/03.png" alt="chair"/></a>
+          <a href="#02">Выражайте эмоции</a>
+        </li>
+        <li class="tab">
+          <a href="#03"><img src="images/icons/01.png" alt="chair"/></a>
+          <a href="#03">Улучшайте интерьер</a>
+        </li>
+        <li class="tab">
+          <a href="#04"><img src="images/icons/07.png" alt="chair"/></a>
+          <a href="#04">Характеристики</a>
+        </li>
+        <li class="tab">
+          <a href="#05"><img src="images/icons/02.png" alt="chair"/></a>
+          <a href="#05">Доставка и оплата</a>
+        </li>
+        <li class="tab">
+          <a href="#06"><img src="images/icons/06.png" alt="chair"/></a>
+          <a href="#06">Гарантия</a>
+        </li>
+        <li class="tab">
+          <a href="#07"><img src="images/icons/04.png" alt="chair"/></a>
+          <a href="#07">Заказать</a>
+        </li>
+      </ul>
+
+      <div class="width-75-no-right-margin">
+        <div id="01">
+          <div class="block width-5 image">
+            <img src="images/03.jpg" alt="Картинка" />
+          </div>
+          <div class="block width-5-no-right-margin">
+            <h4>Предоставьте вашему ребёнку свободу творчества</h4>
+            <p>Удовлетворите художественную страсть ваших детей — наклейте плёнку на стену или дверь жилой комнаты и можно свободно рисовать. Обои и мебель теперь в безопасности.</p>
+          </div>
+        </div>
+
+        <div id="02">
+          <div class="block width-5 image">
+            <img src="images/01.jpg" alt="Картинка" />
+          </div>
+          <div class="block width-5-no-right-margin">
+            <h4>Оставьте послание своим близким или соседям</h4>
+            <p>Пишите признания в любви, ведите список покупок, оставляйте напоминания. Плёнку можно нарезать на удобные части и наклеить на любые поверхности, где вы хотели бы оставить свои записи.</p>
+          </div>
+        </div>
+
+        <div id="03">
+          <div class="block width-7">
+            <h4>Сделайте свои вещи удобнее, оригинальнее или приятнее</h4>
+            <p>Наклейте плёнку на баночки и коробочки — и сразу будет видно, где что находится. Текст на плёнке легко стереть, а саму плёнку отклеить — смело экспериментируйте с подходящими вещами вокруг.</p>
+          </div>
+          <div class="block width-3-no-right-margin image">
+            <img src="images/02.jpg" alt="Картинка" />
+          </div>
+        </div>
+
+        <div id="04">
+          <div class="list block width-6">
+            <ul>
+              <h4>Что вы получите?</h4>
+              <li>Высококачественная виниловая чёрная самоклеющаяся плёнка, в рулоне</li>
+              <li>Размер — 200×45&nbsp;см</li>
+              <li>5 цветных мелков в комплекте</li>
+              <li>Доставка по России бесплатная</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="05">
+          <div class="block width-10 list">
+            <ul>
+              <h4>Какая цена продукта?</h4>
+              <li><b>1&nbsp;350</b> рублей за 1&nbsp;шт.</li>
+              <li><s>2&nbsp;700</s> <b>2&nbsp;000</b> рублей за 2&nbsp;шт.</li>
+              <li><s>6&nbsp;750</s> <b>4&nbsp;000</b> рублей за 5&nbsp;шт.</li>
+              <li>Оплата на почте при получении</li>
+            </ul>
+            <div class="space"></div>
+            <ul>
+              <h4>Какие условия доставки?</h4>
+              <li>Доставка бесплатная</li>
+              <li>Товар доставляется отправлением 1 класса почты России</li>
+              <li>У вас будет трекинг-номер для отслеживания посылки</li>
+              <li>Мы отправим вам СМС, когда товар придёт на почту</li>
+            </ul>
+            <div class="space"></div>
+            <ul>
+              <h4>Как использовать?</h4>
+              <li>Если необходимо, отрежьте ножницами от рулона нужную вам фигуру</li>
+              <li>Отклейте с задней стороны плёнки защитный слой</li>
+              <li>Плотно приложите плёнку к поверхности и разгладьте (для полноразмерных листов лучше делать вдвоём)</li>
+              <li>Подходит для любых ровных (не шероховатых) поверхностей</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="06">
+          <div class="block width-4" style="clear:left">
+            <h5>Гарантия качества</h5>
+            <p>Если Вам не понравился товар, мы вернём Вам деньги без лишних вопросов в течение 30&nbsp;дней после получения</p>
+          </div>
+          <div class="block image width-1">
+            <img src="images/quality.jpg" alt="Гарантия качества" style="width:150%"/>
+          </div>
+        </div>
+
+        <div id="07">
+          <div class="block width-6 image">
+            <img src="images/roll.png" alt="Меловое покрытие с мелками" />
+          </div>
+          <div class="block width-4-no-right-margin">
+            <h5 class="center">Заказать меловую плёнку 200×45&nbsp;см за&nbsp;1&nbsp;350&nbsp;руб.</h5>
+            <p class="small center">Подробную информацию см. <a href="#legal">внизу</a></p>
+            <div class="form">
+              <form action="https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse" method="post">
+                <input type="hidden" name="entry.1179487391" value="Верх"/>
+                <div class="field">
+                  <input type="text" name="entry.1629810863" placeholder="Имя"/>
+                </div>
+                <div class="field">
+                  <input type="text" name="entry.909169410" placeholder="Телефон"/>
+                </div>
+                <div class="field">
+                  <input type="text" name="entry.1360748745" placeholder="Электронная почта"/>
+                </div>
+                <div class="control">
+                  <input type="submit" value="Оформить заказ"/>
+                </div>
+              </form>
+            </div>
+            <p class="center blue">Оплата при получении</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="block width-3 small">
+      <a name="legal"></a>
+      <p>ИП Золотарев Евгений Валерьвич</p>
+      <p>ОГРНИП: 310504734000091</p>
+    </div>
+    <div class="block width-4 small">
+      <p>Данный интернет-сайт носит исключительно информационный характер и не является публичной офертой.</p>
+    </div>
+    <div class="block width-3-no-margin small" style="text-align:right">
+      <p><a href="confidential.pdf">Политика конфиденциальности</a></p>
+    </div>
+  </div>
+</body>
+</html>
