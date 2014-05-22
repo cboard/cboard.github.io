@@ -26,7 +26,8 @@
       $('#tab-container').easytabs({
         animationSpeed: 'normal',
         transitionIn:'show',
-        transitionOut:'hide'
+        transitionOut:'hide',
+        defaultTab:'#default'
       });
       $('.control input').click(function(){
         $(this).attr('disabled','disabled');
@@ -44,6 +45,10 @@
       <h1>Меловая самоклеющаяся плёнка</h1>
       <ul class="inline" style="margin:1em 0">
         <li class="tab">
+          <a href="#05"><img src="images/icons/02.png" alt="delivery"/></a>
+          <a href="#05">Доставка и оплата</a>
+        </li>
+        <li class="tab">
           <a href="#06"><img src="images/icons/06.png" alt="warranty"/></a>
           <a href="#06">Гарантия</a>
         </li>
@@ -54,7 +59,7 @@
       </ul>
 
       <ul class="etabs width-25">
-        <li class="tab">
+        <li class="tab" id="default">
           <a href="#01"><img src="images/icons/05.png" alt="gift"/></a>
           <a href="#01">Подарок детям</a>
         </li>
@@ -69,10 +74,6 @@
         <li class="tab">
           <a href="#04"><img src="images/icons/07.png" alt="product"/></a>
           <a href="#04">Характеристики</a>
-        </li>
-        <li class="tab">
-          <a href="#05"><img src="images/icons/02.png" alt="delivery"/></a>
-          <a href="#05">Доставка и оплата</a>
         </li>
       </ul>
 
@@ -168,12 +169,12 @@
         </div>
 
         <div id="06">
-          <div class="block width-4" style="clear:left">
+          <div class="block width-4">
             <h5>Гарантия качества</h5>
             <p>Если Вам не понравился товар, мы вернём Вам деньги без лишних вопросов в течение 30&nbsp;дней после получения</p>
           </div>
-          <div class="block image width-1">
-            <img src="images/quality.jpg" alt="Гарантия качества" style="width:150%"/>
+          <div class="block image width-3">
+            <img src="images/quality.png" alt="Гарантия качества">
           </div>
         </div>
 
