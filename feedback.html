@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Меловая самоклеющаяся плёнка</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link type="text/css" rel="stylesheet" media="screen" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="counters.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+    sendMessageForm = function(_form){
+      $.ajax({
+        type: 'POST',
+        url: "https://docs.google.com/forms/d/1fSZlnAwxDlJDtnazD_PBeX4hyyO782eenfwyB-kOPK0/formResponse",
+        data: _form.serialize(),
+        complete: function() {
+          window.location.href = "index.html";
+        },
+      });
+    };
+
+    $(document).ready(function(){
+      $('.control input').click(function(){
+        $(this).attr('disabled','disabled');
+        sendMessageForm($(this).closest('form'));
+        return false;
+      });
+    });
+  //]]>
+  </script>
+</head>
+<body class="visual_bg">
+  <div class="wrapper">
+    <div class="block center">
+      <h3>Задайте ваш вопрос!</h3>
+      <span>Если у вас остались вопросы, напишите нам.</span>
+    </div>
+    <div>
+      <div class="block center" style="width:50%; margin:auto">
+        <div class="form">
+          <form action="https://docs.google.com/forms/d/1fSZlnAwxDlJDtnazD_PBeX4hyyO782eenfwyB-kOPK0/formResponse" method="post">
+            <div class="field">
+              <input type="text" name="entry.2091373784" placeholder="Имя"/>
+            </div>
+            <div class="field">
+              <input type="text" name="entry.2126617220" placeholder="e-mail"/>
+            </div>
+            <div class="field">
+              <textarea name="entry.1372789935" placeholder="Сообщение"></textarea>
+            </div>
+            <div class="control">
+              <input type="submit" value="Отправить"/>
+            </div>
+          </form>
+          <div class="block center">
+            <p><a href="index.html">Вернуться</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="block width-5">
+    <div class="push"></div>
+  </div>
+
+  <div class="footer">
+  </div>
+</body>
+</html>
