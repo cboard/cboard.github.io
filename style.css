@@ -86,6 +86,7 @@ a {color:#ffccaa}
 }
 
 .blue {color:#003366}
+.light_yellow {color:#ffccaa}
 .blue_bg {
   background:#006070;
   color:#ffffff;
@@ -114,19 +115,15 @@ a {color:#ffccaa}
   width:100%; height:65px; margin-top:.35em;
   display: block; text-align: center;
   color: #FFFFFF;
+  background-color: #4E8B76;
   background-image: -webkit-gradient(
-  linear,
-  left top,
-  left bottom,
-  color-stop(0, #278DA1),
-  color-stop(1, #01596B)
+    linear, left top, left bottom, color-stop(0, #4E8B76), color-stop(1, #215543)
   );
-  background-color: #007790;
-  background-image: -o-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
-  background-image: -moz-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
-  background-image: -webkit-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
-  background-image: -ms-linear-gradient(bottom, #278DA1 0%, #01596B 100%);
-  background-image: linear-gradient(to bottom, #278DA1 0%, #01596B 100%);
+  background-image: -o-linear-gradient(bottom, #4E8B76 0%, #215543 100%);
+  background-image: -moz-linear-gradient(bottom, #4E8B76 0%, #215543 100%);
+  background-image: -webkit-linear-gradient(bottom, #4E8B76 0%, #215543 100%);
+  background-image: -ms-linear-gradient(bottom, #4E8B76 0%, #215543 100%);
+  background-image: linear-gradient(to bottom, #4E8B76 0%, #215543 100%);
   font-size: 22px; font-weight:bold;
   cursor: pointer; border: 0;
   border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;
@@ -156,5 +153,6 @@ a {color:#ffccaa}
   margin: 0 auto -6em;
 }
 .footer, .push {
+  clear:both;
   height: 6em;
 }
