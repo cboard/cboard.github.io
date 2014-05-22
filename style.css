@@ -17,15 +17,16 @@ body {
 
 .wrapper, .footer {min-width:960px; padding:0 5%}
 
-.tab-container {padding-top:2em}
+.tab-container {padding-top:1.5em}
 .etabs {margin:1.2em 0; font-size:20px}
+.etabs_horizontal {padding:1.5em 0 1.5em 25%; margin-left:-1.5em}
 .tab {margin-bottom:1.2em}
 .tab img {margin-right:.5em}
 a.active {color:white; text-decoration:none}
 
 .block {padding:1.2em 0}
 .center {text-align:center}
-.divider {clear:both; border-top:1px solid #ccc}
+.divider {clear:both; border-top:1px solid #ffccaa}
 .space {clear:both; padding:0.6em 0}
 
 .list {font-size:20px; line-height:1.5em}
