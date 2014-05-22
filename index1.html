@@ -53,7 +53,7 @@
       font-size:18px;
     }
 
-    .wrapper, .header, .footer {min-width:960px; padding:0 5%}
+    .wrapper, .footer {min-width:960px; padding:0 5%}
 
     .tab-container {padding-top:2em}
     .etabs {margin:1.2em 0; font-size:20px}
@@ -72,6 +72,7 @@
     .form {padding-bottom:.5em}
     .small {font-size:75%; color:#eee}
     .image img {width:100%; margin:0 auto; display:block}
+    .inline li {display:inline; margin-right:3em}
 
     .width-1 {width: 7%; margin-right:3%; float:left}
     .width-2 {width:17%; margin-right:3%; float:left}
@@ -174,15 +175,23 @@
       background-image: none;
     }
 
+    .button {
+      background:#4E8B76;
+      border-width:2px;
+      border-style:solid;
+      border-color:#5E9B86 #3E7B66 #3E7B66 #5E9B86;
+      padding:.5em .8em;
+    }
+
     /* Sticky Footer Solution */
     .wrapper {
       min-height: 100%;
       height: auto !important;
       height: 100%;
-      margin: 0 auto -5em;
+      margin: 0 auto -6em;
     }
     .footer, .push {
-      height: 5em;
+      height: 6em;
     }
 
   </style>
@@ -190,7 +199,22 @@
 <body class="visual_bg">
   <div class="wrapper">
 
-    <div id="tab-container" class="main tab-container">
+    <div id="tab-container" class="tab-container">
+      <h1>Меловая самоклеющаяся плёнка</h1>
+      <ul class="inline" style="margin:1em 0">
+        <li class="tab">
+          <a href="#05"><img src="images/icons/02.png" alt="delivery"/></a>
+          <a href="#05">Доставка и оплата</a>
+        </li>
+        <li class="tab">
+          <a href="#06"><img src="images/icons/06.png" alt="warranty"/></a>
+          <a href="#06">Гарантия</a>
+        </li>
+        <li class="tab button">
+          <a href="#07"><img src="images/icons/04.png" alt="order"/></a>
+          <a href="#07">Заказать</a>
+        </li>
+      </ul>
 
       <ul class="etabs width-25">
         <li class="tab">
@@ -208,18 +232,6 @@
         <li class="tab">
           <a href="#04"><img src="images/icons/07.png" alt="product"/></a>
           <a href="#04">Характеристики</a>
-        </li>
-        <li class="tab">
-          <a href="#05"><img src="images/icons/02.png" alt="delivery"/></a>
-          <a href="#05">Доставка и оплата</a>
-        </li>
-        <li class="tab">
-          <a href="#06"><img src="images/icons/06.png" alt="warranty"/></a>
-          <a href="#06">Гарантия</a>
-        </li>
-        <li class="tab">
-          <a href="#07"><img src="images/icons/04.png" alt="order"/></a>
-          <a href="#07">Заказать</a>
         </li>
       </ul>
 
@@ -365,9 +377,9 @@
 
   <div class="footer">
     <div class="block width-3 small">
-      <a name="legal"></a>
       <p>ИП Золотарев Евгений Валерьвич</p>
       <p>ОГРНИП: 310504734000091</p>
+      <p><a href="mailto:magicchalkboard@yandex.ru">magicchalkboard@yandex.ru</a></p>
     </div>
     <div class="block width-4 small">
       <p>Данный интернет-сайт носит исключительно информационный характер и не является публичной офертой.</p>
