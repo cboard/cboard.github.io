@@ -28,6 +28,7 @@ a.active {color:white; text-decoration:none}
 .center {text-align:center}
 .divider {clear:both; border-top:1px solid #ffccaa}
 .space {clear:both; padding:0.6em 0}
+.highlight {color:black; background:yellow}
 
 .list {font-size:20px; line-height:1.5em}
 .list ul li {list-style:disc; margin-left:20px; padding-left:5px}
