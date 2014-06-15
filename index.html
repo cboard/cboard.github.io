@@ -22,16 +22,33 @@
       });
     };
 
+    getUrlVars = function(){
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&#]+)=([^&#]*)/gi,
+          function(m,key,value) {
+          vars[key] = value;
+      });
+      return vars;
+    };
+
     $(document).ready(function(){
       $('#tab-container').easytabs({
         animationSpeed: 'fast',
         defaultTab:'#default'
       });
+
       $('.control input').click(function(){
         $(this).attr('disabled','disabled');
         sendOrderForm($(this).closest('form'));
         return false;
       });
+
+      $('#source_input').val(
+        getUrlVars()["utm_source"] + ':' +
+        getUrlVars()["utm_medium"] + ':' +
+        getUrlVars()["utm_campaign"]
+      );
+
     });
   //]]>
   </script>
@@ -190,7 +207,7 @@
             </h4>
             <div class="form">
               <form action="https://docs.google.com/forms/d/1yaTq5JOtT7pNfJAsWU4k6LQ3VpbHK6WzaEctpxsIoro/formResponse" method="post">
-                <input type="hidden" name="entry.1179487391" value="Верх"/>
+                <input type="hidden" name="entry.1179487391" id="source_input" value="Верх"/>
                 <div class="field">
                   <input type="text" name="entry.1629810863" placeholder="Имя"/>
                 </div>
